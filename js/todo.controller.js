@@ -56,13 +56,15 @@ function onShowDetails(todoId) {
     const elModal = document.querySelector('.modal')
     const elData = elModal.querySelector('pre')
 
+    // Model
     const todo = getTodoById(todoId)
 
+    // DOM
     elData.innerText = JSON.stringify(todo, null, 2)
-    elModal.classList.remove('hidden')
+    elModal.showModal()
 }
 
-function onHideModal() {
-    const elModal = document.querySelector('.modal')
-    elModal.classList.add('hidden')
-}
+// function onHideModal() {
+//     const elModal = document.querySelector('.modal')
+//     elModal.close()
+// }

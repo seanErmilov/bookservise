@@ -16,7 +16,7 @@ function renderTodos() {
     const strHtmls = gTodos.map(todo => `
         <li onclick="onToggleTodo('${todo.id}')">
             <span class=${todo.isDone ? "done" : ""}>${todo.txt}</span>
-            <button onclick="onRemoveTodo('${todo.id}')">x</button>
+            <button onclick="onRemoveTodo(event, '${todo.id}')">x</button>
         </li>`)
 
     elTodoList.innerHTML = strHtmls.join('')
@@ -26,7 +26,9 @@ function onAddTodo() {
     console.log('Adding...')
 }
 
-function onRemoveTodo(todoId) {
+function onRemoveTodo(ev, todoId) {
+
+    ev.stopPropagation()
 
     // Model
     const idx = gTodos.findIndex(todo => todo.id === todoId)
@@ -41,7 +43,7 @@ function onToggleTodo(todoId) {
     // Model
     const todo = gTodos.find(todo => todo.id === todoId)
     todo.isDone = !todo.isDone
-    
+
     // DOM
     renderTodos()
 }

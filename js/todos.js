@@ -23,7 +23,20 @@ function renderTodos() {
 }
 
 function onAddTodo() {
-    console.log('Adding...')
+    const elInput = document.querySelector('input')
+    const txt = elInput.value
+
+    // Model
+    const todo = {
+        id: `t${Date.now() % 1000}`,
+        txt,
+        isDone: false,
+    }
+    gTodos.unshift(todo)
+    
+    // DOM
+    renderTodos()
+    elInput.value = ''
 }
 
 function onRemoveTodo(ev, todoId) {

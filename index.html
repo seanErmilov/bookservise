@@ -11,20 +11,20 @@
         <h1>Let's Todo Today</h1>
 
         <input type="text" placeholder="What todo?">
-        <button>Add a Todo</button>
+        <button onclick="onAddTodo()">Add a Todo</button>
 
         <ul>
-            <li>
+            <li onclick="onToggleTodo(101)">
                 <span>Do This</span>
-                <button>x</button>
+                <button onclick="onRemoveTodo(101)">x</button>
             </li>
-            <li>
+            <li onclick="onToggleTodo(102)">
                 <span class="done">Do This</span>
-                <button>x</button>
+                <button onclick="onRemoveTodo(102)">x</button>
             </li>
-            <li>
+            <li onclick="onToggleTodo(103)">
                 <span>Do This</span>
-                <button>x</button>
+                <button onclick="onRemoveTodo(103)">x</button>
             </li>
         </ul>
         

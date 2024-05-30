@@ -13,6 +13,18 @@ function getTodos(filterBy) {           // List
     return gTodos.filter(todo => todo.isDone === isDone)
 }
 
+function getTotalTodoCount() {
+    return gTodos.length
+}
+
+function getActiveTodoCount() {
+    return gTodos.filter(todo => !todo.isDone).length
+}
+
+function getCompletedTodoCount() {
+    return getTotalTodoCount() - getActiveTodoCount()
+}
+
 function getTodoById(todoId) {  // Read
     const todo = gTodos.find(todo => todo.id === todoId)
     return todo

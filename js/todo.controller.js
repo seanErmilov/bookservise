@@ -18,6 +18,19 @@ function renderTodos() {
         </li>`)
 
     elTodoList.innerHTML = strHtmls.join('')
+    renderStats()
+}
+
+function renderStats() {
+    const elFooter = document.querySelector('footer')
+
+    const elTotalCount = elFooter.querySelector('.total')
+    const elActiveCount = elFooter.querySelector('.active')
+    const elCompletedCount = elFooter.querySelector('.completed')
+
+    elTotalCount.innerText = getTotalTodoCount()
+    elActiveCount.innerText = getActiveTodoCount()
+    elCompletedCount.innerText = getCompletedTodoCount()
 }
 
 function onFilterBy(elSelect) {

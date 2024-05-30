@@ -19,6 +19,10 @@ header {
     margin-block-end: .5rem;
 }
 
+footer {
+    justify-content: space-between;
+}
+
 main {
     display: flex;
     flex-direction: column;

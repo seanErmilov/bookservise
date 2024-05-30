@@ -10,6 +10,11 @@ function getTodos() {           // List
     return gTodos
 }
 
+function getTodoById(todoId) {  // Read
+    const todo = gTodos.find(todo => todo.id === todoId)
+    return todo
+}
+
 function addTodo(txt) {         // Create
 
     const todo = {

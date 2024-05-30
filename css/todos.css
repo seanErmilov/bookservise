@@ -31,6 +31,10 @@ main {
     background-color: darkcyan;
 }
 
+.modal {
+    background-color: lightblue;
+}
+
 .todo-list {
     padding: 0;
     list-style: none;
@@ -38,6 +42,7 @@ main {
 
 .todo-list li {
     display: flex;
+    gap: 5px;
     padding: 3px 10px;
     border-block-end: 1px solid gray;
     cursor: pointer;
@@ -53,4 +58,8 @@ main {
 
 .done {
     text-decoration: line-through;
+}
+
+.hidden {
+    display: none;
 }

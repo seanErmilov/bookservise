@@ -28,7 +28,13 @@ function onAddTodo() {
 }
 
 function onRemoveTodo(todoId) {
-    console.log(todoId)
+
+    // Model
+    const idx = gTodos.findIndex(todo => todo.id === todoId)
+    gTodos.splice(idx, 1)
+
+    // DOM
+    renderTodos()
 }
 
 function onToggleTodo(todoId) {

@@ -7,26 +7,13 @@
         <link rel="stylesheet" href="css/todos.css">
         <title>todos</title>
     </head>
-    <body>
+    <body onload="onInit()">
         <h1>Let's Todo Today</h1>
 
         <input type="text" placeholder="What todo?">
         <button onclick="onAddTodo()">Add a Todo</button>
 
-        <ul>
-            <li onclick="onToggleTodo(101)">
-                <span>Do This</span>
-                <button onclick="onRemoveTodo(101)">x</button>
-            </li>
-            <li onclick="onToggleTodo(102)">
-                <span class="done">Do This</span>
-                <button onclick="onRemoveTodo(102)">x</button>
-            </li>
-            <li onclick="onToggleTodo(103)">
-                <span>Do This</span>
-                <button onclick="onRemoveTodo(103)">x</button>
-            </li>
-        </ul>
+        <ul class="todo-list"></ul>
         
         <script src="js/todos.js"></script>
     </body>

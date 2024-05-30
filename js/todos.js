@@ -19,7 +19,6 @@ function renderTodos() {
             <button onclick="onRemoveTodo('${todo.id}')">x</button>
         </li>`)
 
-
     elTodoList.innerHTML = strHtmls.join('')
 }
 
@@ -38,5 +37,11 @@ function onRemoveTodo(todoId) {
 }
 
 function onToggleTodo(todoId) {
-    console.log(todoId)
+    
+    // Model
+    const todo = gTodos.find(todo => todo.id === todoId)
+    todo.isDone = !todo.isDone
+    
+    // DOM
+    renderTodos()
 }

@@ -26,9 +26,10 @@ main {
     min-height: calc(100vh - 10vh - 1.5rem);
 }
 
-.add-todo {
+.add-todo, .filter {
     padding: 10px;
     background-color: darkcyan;
+    margin-block-end: 10px;
 }
 
 .modal {

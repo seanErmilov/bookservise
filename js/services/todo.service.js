@@ -6,8 +6,11 @@ const gTodos = [
     { id: 't103', txt: 'Try This', isDone: false },
 ]
 
-function getTodos() {           // List
-    return gTodos
+function getTodos(filterBy) {           // List
+    if(!filterBy) return gTodos
+
+    const isDone = (filterBy === 'done')
+    return gTodos.filter(todo => todo.isDone === isDone)
 }
 
 function getTodoById(todoId) {  // Read

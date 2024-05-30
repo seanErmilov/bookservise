@@ -1,12 +1,14 @@
 'use strict'
 
+var gFilterBy = ''
+
 function onInit() {
     renderTodos()
 }
 
 function renderTodos() {
     const elTodoList = document.querySelector('.todo-list')
-    const todos = getTodos()
+    const todos = getTodos(gFilterBy)
 
     const strHtmls = todos.map(todo => `
         <li onclick="onToggleTodo('${todo.id}')">
@@ -16,6 +18,11 @@ function renderTodos() {
         </li>`)
 
     elTodoList.innerHTML = strHtmls.join('')
+}
+
+function onFilterBy(elSelect) {
+    gFilterBy = elSelect.value
+    renderTodos()
 }
 
 function onAddTodo(ev) {

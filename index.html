@@ -13,6 +13,14 @@
         </header>
 
         <main>
+            <section class="filter">
+                <select onchange="onFilterBy(this)">
+                    <option value="">All</option>
+                    <option value="done">Complete</option>
+                    <option value="active">Active</option>
+                </select>
+            </section>
+
             <form class="add-todo" onsubmit="onAddTodo(event)">
                 <input type="text" placeholder="What todo?">
                 <button>Add a Todo</button>

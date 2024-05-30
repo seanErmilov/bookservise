@@ -10,8 +10,10 @@
     <body onload="onInit()">
         <h1>Let's Todo Today</h1>
 
-        <input type="text" placeholder="What todo?">
-        <button onclick="onAddTodo()">Add a Todo</button>
+        <form onsubmit="onAddTodo(event)">
+            <input type="text" placeholder="What todo?">
+            <button>Add a Todo</button>
+        </form>
 
         <ul class="todo-list"></ul>
         

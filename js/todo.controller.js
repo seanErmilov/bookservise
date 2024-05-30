@@ -17,7 +17,9 @@ function renderTodos() {
     elTodoList.innerHTML = strHtmls.join('')
 }
 
-function onAddTodo() {
+function onAddTodo(ev) {
+    ev.preventDefault()
+    
     const elInput = document.querySelector('input')
     const txt = elInput.value
     

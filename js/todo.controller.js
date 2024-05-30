@@ -13,7 +13,7 @@ function renderTodos() {
     const strHtmls = todos.map(todo => `
         <li onclick="onToggleTodo('${todo.id}')">
             <span class=${todo.isDone ? "done" : ""}>${todo.txt}</span>
-            <button onclick="onShowDetails('${todo.id}')">Details</button>
+            <button onclick="onShowDetails(event, '${todo.id}')">Details</button>
             <button onclick="onRemoveTodo(event, '${todo.id}')">x</button>
         </li>`)
 
@@ -72,7 +72,9 @@ function onToggleTodo(todoId) {
     renderTodos()
 }
 
-function onShowDetails(todoId) {
+function onShowDetails(ev, todoId) {
+    ev.stopPropagation()
+    
     const elModal = document.querySelector('.modal')
     const elData = elModal.querySelector('pre')
 
